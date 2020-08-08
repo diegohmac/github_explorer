@@ -9,7 +9,6 @@ const spin = keyframes`
 	to {
 		transform: rotate(360deg);
 	}
-
 `;
 
 export const Header = styled.header`
