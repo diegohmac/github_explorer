@@ -49,6 +49,7 @@ export const RepositoryInfo = styled.section`
 
     div {
       margin-left: 24px;
+      width: 100%;
 
       strong {
         font-size: 36px;
@@ -83,6 +84,35 @@ export const RepositoryInfo = styled.section`
         display: block;
         margin-top: 4px;
         color: #6c6c80;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+
+    header {
+      flex-direction: column;
+
+      div {
+        margin: 10px 0 0 0;
+
+        strong {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: block;
+        }
+      }
+    }
+
+    ul {
+      flex-wrap: wrap;
+      li {
+        flex-grow: 0.5;
+        & + li {
+          margin: 0;
+        }
       }
     }
   }

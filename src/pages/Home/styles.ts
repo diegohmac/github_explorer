@@ -11,6 +11,11 @@ export const Title = styled.h1`
   line-height: 56px;
   max-width: 450px;
   margin-top: 80px;
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    width: 100%;
+  }
 `;
 
 export const Form = styled.form<FormProps>`
@@ -23,7 +28,6 @@ export const Form = styled.form<FormProps>`
     flex: 1;
     height: 70px;
     padding: 0 24px;
-    border: 0;
     border-radius: 5px 0 0 5px;
     color: #3a3a3a;
     border: 2px solid #fff;
@@ -52,6 +56,29 @@ export const Form = styled.form<FormProps>`
 
     &:hover {
       background: ${shade(0.2, '#04d361')};
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+
+    input {
+      flex: none;
+      border-radius: 5px 5px 0 0;
+      border: 2px solid #fff;
+      border-bottom: 0;
+      ${props =>
+        props.hasError &&
+        css`
+          border-color: #c53030;
+        `}
+    }
+
+    button {
+      width: 100%;
+      border-radius: 0 0 5px 5px;
     }
   }
 `;
@@ -129,6 +156,42 @@ export const Repositories = styled.div`
         transform: scale(1.2);
         transform: rotate(90deg);
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    width: 100%;
+
+    & > div {
+      flex-direction: column;
+
+      a {
+        flex-direction: column;
+
+        div {
+          margin: 0;
+        }
+
+        div strong {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        div p {
+          text-align: center;
+        }
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    & > div > svg:last-of-type {
+      margin: 10px 0 0 0;
     }
   }
 `;
