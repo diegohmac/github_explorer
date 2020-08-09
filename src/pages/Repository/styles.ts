@@ -109,10 +109,13 @@ export const RepositoryInfo = styled.section`
     ul {
       flex-wrap: wrap;
       li {
-        flex-grow: 0.5;
+        flex: 1 0;
         & + li {
-          margin: 0;
+          margin-left: 0;
         }
+      }
+      li:not(:last-of-type) {
+        margin-right: 20px;
       }
     }
   }
